@@ -7,309 +7,239 @@
 
         <div>
             All Invoices<br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
-            DeleteCommand="DELETE FROM [PACKAGE] WHERE [pack_ID] = @pack_ID" 
-            InsertCommand="INSERT INTO [PACKAGE] ([pack_ID], [pack_price], [pack_shirt], [shirt_size], [pack_food], [pack_discount], [pack_medal], [pack_category], [pack_reciept]) VALUES (@pack_ID, @pack_price, @pack_shirt, @shirt_size, @pack_food, @pack_discount, @pack_medal, @pack_category, @pack_reciept)" 
-            SelectCommand="SELECT * FROM [PACKAGE]" 
-            
-                UpdateCommand="UPDATE [PACKAGE] SET [pack_price] = @pack_price, [pack_shirt] = @pack_shirt, [shirt_size] = @shirt_size, [pack_food] = @pack_food, [pack_discount] = @pack_discount, [pack_medal] = @pack_medal, [pack_category] = @pack_category, [pack_reciept] = @pack_reciept WHERE [pack_ID] = @pack_ID" 
-                onselecting="SqlDataSource1_Selecting">
-            <DeleteParameters>
-                <asp:Parameter Name="pack_ID" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="pack_ID" Type="Int32" />
-                <asp:Parameter Name="pack_price" Type="Int32" />
-                <asp:Parameter Name="pack_shirt" Type="Boolean" />
-                <asp:Parameter Name="shirt_size" Type="String" />
-                <asp:Parameter Name="pack_food" Type="String" />
-                <asp:Parameter Name="pack_discount" Type="Int32" />
-                <asp:Parameter Name="pack_medal" Type="Boolean" />
-                <asp:Parameter Name="pack_category" Type="String" />
-                <asp:Parameter Name="pack_reciept" Type="String" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="pack_price" Type="Int32" />
-                <asp:Parameter Name="pack_shirt" Type="Boolean" />
-                <asp:Parameter Name="shirt_size" Type="String" />
-                <asp:Parameter Name="pack_food" Type="String" />
-                <asp:Parameter Name="pack_discount" Type="Int32" />
-                <asp:Parameter Name="pack_medal" Type="Boolean" />
-                <asp:Parameter Name="pack_category" Type="String" />
-                <asp:Parameter Name="pack_reciept" Type="String" />
-                <asp:Parameter Name="pack_ID" Type="Int32" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
-        <asp:ListView ID="ListView1" runat="server" DataKeyNames="pack_ID" 
-            DataSourceID="SqlDataSource1">
-            <AlternatingItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_IDLabel" runat="server" Text='<%# Eval("pack_ID") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_priceLabel" runat="server" 
-                            Text='<%# Eval("pack_price") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_shirtCheckBox" runat="server" 
-                            Checked='<%# Eval("pack_shirt") %>' Enabled="false" />
-                    </td>
-                    <td>
-                        <asp:Label ID="shirt_sizeLabel" runat="server" 
-                            Text='<%# Eval("shirt_size") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_foodLabel" runat="server" Text='<%# Eval("pack_food") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_discountLabel" runat="server" 
-                            Text='<%# Eval("pack_discount") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_medalCheckBox" runat="server" 
-                            Checked='<%# Eval("pack_medal") %>' Enabled="false" />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_categoryLabel" runat="server" 
-                            Text='<%# Eval("pack_category") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_recieptLabel" runat="server" 
-                            Text='<%# Eval("pack_reciept") %>' />
-                    </td>
-                </tr>
-            </AlternatingItemTemplate>
-            <EditItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" 
-                            Text="Update" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" 
-                            Text="Cancel" />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_IDLabel1" runat="server" Text='<%# Eval("pack_ID") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_priceTextBox" runat="server" 
-                            Text='<%# Bind("pack_price") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_shirtCheckBox" runat="server" 
-                            Checked='<%# Bind("pack_shirt") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="shirt_sizeTextBox" runat="server" 
-                            Text='<%# Bind("shirt_size") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_foodTextBox" runat="server" 
-                            Text='<%# Bind("pack_food") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_discountTextBox" runat="server" 
-                            Text='<%# Bind("pack_discount") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_medalCheckBox" runat="server" 
-                            Checked='<%# Bind("pack_medal") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_categoryTextBox" runat="server" 
-                            Text='<%# Bind("pack_category") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_recieptTextBox" runat="server" 
-                            Text='<%# Bind("pack_reciept") %>' />
-                    </td>
-                </tr>
-            </EditItemTemplate>
-            <EmptyDataTemplate>
-                <table runat="server" style="">
-                    <tr>
+            <br />
+            <asp:ListView ID="ListView1" runat="server" DataKeyNames="part_ID" 
+                DataSourceID="SqlDataSource1">
+                <AlternatingItemTemplate>
+                    <tr style="background-color: #FAFAD2;color: #284775;">
                         <td>
-                            No data was returned.</td>
-                    </tr>
-                </table>
-            </EmptyDataTemplate>
-            <InsertItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" 
-                            Text="Insert" />
-                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" 
-                            Text="Clear" />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_IDTextBox" runat="server" 
-                            Text='<%# Bind("pack_ID") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_priceTextBox" runat="server" 
-                            Text='<%# Bind("pack_price") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_shirtCheckBox" runat="server" 
-                            Checked='<%# Bind("pack_shirt") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="shirt_sizeTextBox" runat="server" 
-                            Text='<%# Bind("shirt_size") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_foodTextBox" runat="server" 
-                            Text='<%# Bind("pack_food") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_discountTextBox" runat="server" 
-                            Text='<%# Bind("pack_discount") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_medalCheckBox" runat="server" 
-                            Checked='<%# Bind("pack_medal") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_categoryTextBox" runat="server" 
-                            Text='<%# Bind("pack_category") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_recieptTextBox" runat="server" 
-                            Text='<%# Bind("pack_reciept") %>' />
-                    </td>
-                </tr>
-            </InsertItemTemplate>
-            <ItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_IDLabel" runat="server" Text='<%# Eval("pack_ID") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_priceLabel" runat="server" 
-                            Text='<%# Eval("pack_price") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_shirtCheckBox" runat="server" 
-                            Checked='<%# Eval("pack_shirt") %>' Enabled="false" />
-                    </td>
-                    <td>
-                        <asp:Label ID="shirt_sizeLabel" runat="server" 
-                            Text='<%# Eval("shirt_size") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_foodLabel" runat="server" Text='<%# Eval("pack_food") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_discountLabel" runat="server" 
-                            Text='<%# Eval("pack_discount") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_medalCheckBox" runat="server" 
-                            Checked='<%# Eval("pack_medal") %>' Enabled="false" />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_categoryLabel" runat="server" 
-                            Text='<%# Eval("pack_category") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_recieptLabel" runat="server" 
-                            Text='<%# Eval("pack_reciept") %>' />
-                    </td>
-                </tr>
-            </ItemTemplate>
-            <LayoutTemplate>
-                <table runat="server">
-                    <tr runat="server">
-                        <td runat="server">
-                            <table ID="itemPlaceholderContainer" runat="server" border="0" style="">
-                                <tr runat="server" style="">
-                                    <th runat="server">
-                                    </th>
-                                    <th runat="server">
-                                        pack_ID</th>
-                                    <th runat="server">
-                                        pack_price</th>
-                                    <th runat="server">
-                                        pack_shirt</th>
-                                    <th runat="server">
-                                        shirt_size</th>
-                                    <th runat="server">
-                                        pack_food</th>
-                                    <th runat="server">
-                                        pack_discount</th>
-                                    <th runat="server">
-                                        pack_medal</th>
-                                    <th runat="server">
-                                        pack_category</th>
-                                    <th runat="server">
-                                        pack_reciept</th>
-                                </tr>
-                                <tr ID="itemPlaceholder" runat="server">
-                                </tr>
-                            </table>
+                            <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
+                                Text="Delete" />
+                            <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_IDLabel" runat="server" Text='<%# Eval("part_ID") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_icnoLabel" runat="server" Text='<%# Eval("part_icno") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_nameLabel" runat="server" Text='<%# Eval("part_name") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_emailLabel" runat="server" 
+                                Text='<%# Eval("part_email") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_phonenoLabel" runat="server" 
+                                Text='<%# Eval("part_phoneno") %>' />
+                        </td>
+                        <td>
+                            <asp:CheckBox ID="part_paidCheckBox" runat="server" 
+                                Checked='<%# Eval("part_paid") %>' Enabled="false" />
                         </td>
                     </tr>
-                    <tr runat="server">
-                        <td runat="server" style="">
-                            <asp:DataPager ID="DataPager1" runat="server">
-                                <Fields>
-                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" 
-                                        ShowLastPageButton="True" />
-                                </Fields>
-                            </asp:DataPager>
+                </AlternatingItemTemplate>
+                <EditItemTemplate>
+                    <tr style="background-color: #FFCC66;color: #000080;">
+                        <td>
+                            <asp:Button ID="UpdateButton" runat="server" CommandName="Update" 
+                                Text="Update" />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" 
+                                Text="Cancel" />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_IDLabel1" runat="server" Text='<%# Eval("part_ID") %>' />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="part_icnoTextBox" runat="server" 
+                                Text='<%# Bind("part_icno") %>' />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="part_nameTextBox" runat="server" 
+                                Text='<%# Bind("part_name") %>' />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="part_emailTextBox" runat="server" 
+                                Text='<%# Bind("part_email") %>' />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="part_phonenoTextBox" runat="server" 
+                                Text='<%# Bind("part_phoneno") %>' />
+                        </td>
+                        <td>
+                            <asp:CheckBox ID="part_paidCheckBox" runat="server" 
+                                Checked='<%# Bind("part_paid") %>' />
                         </td>
                     </tr>
-                </table>
-            </LayoutTemplate>
-            <SelectedItemTemplate>
-                <tr style="">
-                    <td>
-                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_IDLabel" runat="server" Text='<%# Eval("pack_ID") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_priceLabel" runat="server" 
-                            Text='<%# Eval("pack_price") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_shirtCheckBox" runat="server" 
-                            Checked='<%# Eval("pack_shirt") %>' Enabled="false" />
-                    </td>
-                    <td>
-                        <asp:Label ID="shirt_sizeLabel" runat="server" 
-                            Text='<%# Eval("shirt_size") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_foodLabel" runat="server" Text='<%# Eval("pack_food") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_discountLabel" runat="server" 
-                            Text='<%# Eval("pack_discount") %>' />
-                    </td>
-                    <td>
-                        <asp:CheckBox ID="pack_medalCheckBox" runat="server" 
-                            Checked='<%# Eval("pack_medal") %>' Enabled="false" />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_categoryLabel" runat="server" 
-                            Text='<%# Eval("pack_category") %>' />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_recieptLabel" runat="server" 
-                            Text='<%# Eval("pack_reciept") %>' />
-                    </td>
-                </tr>
-            </SelectedItemTemplate>
-        </asp:ListView>
+                </EditItemTemplate>
+                <EmptyDataTemplate>
+                    <table runat="server" 
+                        style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
+                        <tr>
+                            <td>
+                                No data was returned.</td>
+                        </tr>
+                    </table>
+                </EmptyDataTemplate>
+                <InsertItemTemplate>
+                    <tr style="">
+                        <td>
+                            <asp:Button ID="InsertButton" runat="server" CommandName="Insert" 
+                                Text="Insert" />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" 
+                                Text="Clear" />
+                        </td>
+                        <td>
+                            &nbsp;</td>
+                        <td>
+                            <asp:TextBox ID="part_icnoTextBox" runat="server" 
+                                Text='<%# Bind("part_icno") %>' />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="part_nameTextBox" runat="server" 
+                                Text='<%# Bind("part_name") %>' />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="part_emailTextBox" runat="server" 
+                                Text='<%# Bind("part_email") %>' />
+                        </td>
+                        <td>
+                            <asp:TextBox ID="part_phonenoTextBox" runat="server" 
+                                Text='<%# Bind("part_phoneno") %>' />
+                        </td>
+                        <td>
+                            <asp:CheckBox ID="part_paidCheckBox" runat="server" 
+                                Checked='<%# Bind("part_paid") %>' />
+                        </td>
+                    </tr>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <tr style="background-color: #FFFBD6;color: #333333;">
+                        <td>
+                            <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
+                                Text="Delete" />
+                            <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_IDLabel" runat="server" Text='<%# Eval("part_ID") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_icnoLabel" runat="server" Text='<%# Eval("part_icno") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_nameLabel" runat="server" Text='<%# Eval("part_name") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_emailLabel" runat="server" 
+                                Text='<%# Eval("part_email") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_phonenoLabel" runat="server" 
+                                Text='<%# Eval("part_phoneno") %>' />
+                        </td>
+                        <td>
+                            <asp:CheckBox ID="part_paidCheckBox" runat="server" 
+                                Checked='<%# Eval("part_paid") %>' Enabled="false" />
+                        </td>
+                    </tr>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <table runat="server">
+                        <tr runat="server">
+                            <td runat="server">
+                                <table ID="itemPlaceholderContainer" runat="server" border="1" 
+                                    style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                    <tr runat="server" style="background-color: #FFFBD6;color: #333333;">
+                                        <th runat="server">
+                                        </th>
+                                        <th runat="server">
+                                            part_ID</th>
+                                        <th runat="server">
+                                            part_icno</th>
+                                        <th runat="server">
+                                            part_name</th>
+                                        <th runat="server">
+                                            part_email</th>
+                                        <th runat="server">
+                                            part_phoneno</th>
+                                        <th runat="server">
+                                            part_paid</th>
+                                    </tr>
+                                    <tr ID="itemPlaceholder" runat="server">
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr runat="server">
+                            <td runat="server" 
+                                style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
+                                <asp:DataPager ID="DataPager1" runat="server">
+                                    <Fields>
+                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" 
+                                            ShowLastPageButton="True" />
+                                    </Fields>
+                                </asp:DataPager>
+                            </td>
+                        </tr>
+                    </table>
+                </LayoutTemplate>
+                <SelectedItemTemplate>
+                    <tr style="background-color: #FFCC66;font-weight: bold;color: #000080;">
+                        <td>
+                            <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
+                                Text="Delete" />
+                            <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_IDLabel" runat="server" Text='<%# Eval("part_ID") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_icnoLabel" runat="server" Text='<%# Eval("part_icno") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_nameLabel" runat="server" Text='<%# Eval("part_name") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_emailLabel" runat="server" 
+                                Text='<%# Eval("part_email") %>' />
+                        </td>
+                        <td>
+                            <asp:Label ID="part_phonenoLabel" runat="server" 
+                                Text='<%# Eval("part_phoneno") %>' />
+                        </td>
+                        <td>
+                            <asp:CheckBox ID="part_paidCheckBox" runat="server" 
+                                Checked='<%# Eval("part_paid") %>' Enabled="false" />
+                        </td>
+                    </tr>
+                </SelectedItemTemplate>
+            </asp:ListView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
+                DeleteCommand="DELETE FROM [PARTICIPANT] WHERE [part_ID] = @part_ID" 
+                InsertCommand="INSERT INTO [PARTICIPANT] ([part_icno], [part_name], [part_email], [part_phoneno], [part_paid]) VALUES (@part_icno, @part_name, @part_email, @part_phoneno, @part_paid)" 
+                SelectCommand="SELECT * FROM [PARTICIPANT] WHERE ([part_paid] IS NULL)" 
+                UpdateCommand="UPDATE [PARTICIPANT] SET [part_icno] = @part_icno, [part_name] = @part_name, [part_email] = @part_email, [part_phoneno] = @part_phoneno, [part_paid] = @part_paid WHERE [part_ID] = @part_ID">
+                <DeleteParameters>
+                    <asp:Parameter Name="part_ID" Type="Int32" />
+                </DeleteParameters>
+                <InsertParameters>
+                    <asp:Parameter Name="part_icno" Type="String" />
+                    <asp:Parameter Name="part_name" Type="String" />
+                    <asp:Parameter Name="part_email" Type="String" />
+                    <asp:Parameter Name="part_phoneno" Type="String" />
+                    <asp:Parameter Name="part_paid" Type="Boolean" />
+                </InsertParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="part_icno" Type="String" />
+                    <asp:Parameter Name="part_name" Type="String" />
+                    <asp:Parameter Name="part_email" Type="String" />
+                    <asp:Parameter Name="part_phoneno" Type="String" />
+                    <asp:Parameter Name="part_paid" Type="Boolean" />
+                    <asp:Parameter Name="part_ID" Type="Int32" />
+                </UpdateParameters>
+            </asp:SqlDataSource>
 
 
     </div>

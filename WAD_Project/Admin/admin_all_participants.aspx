@@ -8,33 +8,10 @@
 
 
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
-            DeleteCommand="DELETE FROM [PARTICIPANT] WHERE [part_ID] = @part_ID" 
-            InsertCommand="INSERT INTO [PARTICIPANT] ([part_icno], [part_name], [part_email], [part_phoneno]) VALUES (@part_icno, @part_name, @part_email, @part_phoneno)" 
-            SelectCommand="SELECT * FROM [PARTICIPANT]" 
-            UpdateCommand="UPDATE [PARTICIPANT] SET [part_icno] = @part_icno, [part_name] = @part_name, [part_email] = @part_email, [part_phoneno] = @part_phoneno WHERE [part_ID] = @part_ID">
-            <DeleteParameters>
-                <asp:Parameter Name="part_ID" Type="Int32" />
-            </DeleteParameters>
-            <InsertParameters>
-                <asp:Parameter Name="part_icno" Type="String" />
-                <asp:Parameter Name="part_name" Type="String" />
-                <asp:Parameter Name="part_email" Type="String" />
-                <asp:Parameter Name="part_phoneno" Type="String" />
-            </InsertParameters>
-            <UpdateParameters>
-                <asp:Parameter Name="part_icno" Type="String" />
-                <asp:Parameter Name="part_name" Type="String" />
-                <asp:Parameter Name="part_email" Type="String" />
-                <asp:Parameter Name="part_phoneno" Type="String" />
-                <asp:Parameter Name="part_ID" Type="Int32" />
-            </UpdateParameters>
-        </asp:SqlDataSource>
         <asp:ListView ID="ListView1" runat="server" DataKeyNames="part_ID" 
-            DataSourceID="SqlDataSource1">
+            DataSourceID="SqlDataSource1"> 
             <AlternatingItemTemplate>
-                <tr style="">
+                <tr style="background-color: #FAFAD2;color: #284775;">
                     <td>
                         <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
                             Text="Delete" />
@@ -63,7 +40,7 @@
                 </tr>
             </AlternatingItemTemplate>
             <EditItemTemplate>
-                <tr style="">
+                <tr style="background-color: #FFCC66;color: #000080;">
                     <td>
                         <asp:Button ID="UpdateButton" runat="server" CommandName="Update" 
                             Text="Update" />
@@ -96,7 +73,8 @@
                 </tr>
             </EditItemTemplate>
             <EmptyDataTemplate>
-                <table runat="server" style="">
+                <table runat="server" 
+                    style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                     <tr>
                         <td>
                             No data was returned.</td>
@@ -136,7 +114,7 @@
                 </tr>
             </InsertItemTemplate>
             <ItemTemplate>
-                <tr style="">
+                <tr style="background-color: #FFFBD6;color: #333333;">
                     <td>
                         <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
                             Text="Delete" />
@@ -168,8 +146,9 @@
                 <table runat="server">
                     <tr runat="server">
                         <td runat="server">
-                            <table ID="itemPlaceholderContainer" runat="server" border="0" style="">
-                                <tr runat="server" style="">
+                            <table ID="itemPlaceholderContainer" runat="server" border="1" 
+                                style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                <tr runat="server" style="background-color: #FFFBD6;color: #333333;">
                                     <th runat="server">
                                     </th>
                                     <th runat="server">
@@ -191,7 +170,8 @@
                         </td>
                     </tr>
                     <tr runat="server">
-                        <td runat="server" style="">
+                        <td runat="server" 
+                            style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333;">
                             <asp:DataPager ID="DataPager1" runat="server">
                                 <Fields>
                                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" 
@@ -203,7 +183,7 @@
                 </table>
             </LayoutTemplate>
             <SelectedItemTemplate>
-                <tr style="">
+                <tr style="background-color: #FFCC66;font-weight: bold;color: #000080;">
                     <td>
                         <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
                             Text="Delete" />
@@ -232,6 +212,33 @@
                 </tr>
             </SelectedItemTemplate>
         </asp:ListView>
+
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
+            DeleteCommand="DELETE FROM [PARTICIPANT] WHERE [part_ID] = @part_ID" 
+            InsertCommand="INSERT INTO [PARTICIPANT] ([part_icno], [part_name], [part_email], [part_phoneno], [part_paid]) VALUES (@part_icno, @part_name, @part_email, @part_phoneno, @part_paid)" 
+            SelectCommand="SELECT * FROM [PARTICIPANT]" 
+            UpdateCommand="UPDATE [PARTICIPANT] SET [part_icno] = @part_icno, [part_name] = @part_name, [part_email] = @part_email, [part_phoneno] = @part_phoneno, [part_paid] = @part_paid WHERE [part_ID] = @part_ID">
+            <DeleteParameters>
+                <asp:Parameter Name="part_ID" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="part_icno" Type="String" />
+                <asp:Parameter Name="part_name" Type="String" />
+                <asp:Parameter Name="part_email" Type="String" />
+                <asp:Parameter Name="part_phoneno" Type="String" />
+                <asp:Parameter Name="part_paid" Type="Boolean" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="part_icno" Type="String" />
+                <asp:Parameter Name="part_name" Type="String" />
+                <asp:Parameter Name="part_email" Type="String" />
+                <asp:Parameter Name="part_phoneno" Type="String" />
+                <asp:Parameter Name="part_paid" Type="Boolean" />
+                <asp:Parameter Name="part_ID" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
 
 
     </div>
