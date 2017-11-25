@@ -11,4 +11,16 @@ public partial class Admin_admin : System.Web.UI.MasterPage
     {
         lblName.Text = Session["name"].ToString();
     }
+    protected void btmLogout_Click(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Response.Redirect("../landing_page.aspx");
+    }
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void txtSearch_TextChanged(object sender, EventArgs e)
+    {
+    }
 }

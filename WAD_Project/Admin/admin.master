@@ -51,6 +51,12 @@
                                     </asp:TreeView>
                                     <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
                                     &nbsp;
+                                    <br />
+                                    <br />
+                                    <center><asp:Button ID="btmLogout" runat="server" Text="Logout" 
+                                            onclick="btmLogout_Click" />
+                                        <br />
+                                    </center>
                                 </td>
                                 <td class="style1">
                                     <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
@@ -64,8 +70,102 @@
                                     <br />
                                     <div class="content">
                                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" ></asp:ContentPlaceHolder>
+                                        <br />
+&nbsp;Not finding what your looking for??<br />
+&nbsp;
+                                        <asp:TextBox ID="txtSearch" runat="server" 
+                                            ontextchanged="txtSearch_TextChanged" Width="550px">0</asp:TextBox>
+&nbsp;<asp:Button ID="btnSearch" runat="server" Text="Search" />
+                                        <br />
+&nbsp; <sup><i>Can only search by id,phoneno, IC please dont place name</i></sup><br />
+                                        <asp:RangeValidator ID="rvSearch" runat="server" ControlToValidate="txtSearch" 
+                                            ErrorMessage="&lt;b&gt;Thats not a the wanted input my love.&lt;/b&gt;" 
+                                            MaximumValue="9999999999999999999999" MinimumValue="0"></asp:RangeValidator>
+                                        <br />
+                                        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" 
+                                            DataKeyNames="pack_ID" DataSourceID="SqlDataSourceA" Height="50px" 
+                                            Width="125px">
+                                            <Fields>
+                                                <asp:BoundField DataField="pack_ID" HeaderText="pack_ID" InsertVisible="False" 
+                                                    ReadOnly="True" SortExpression="pack_ID" />
+                                                <asp:BoundField DataField="pack_price" HeaderText="pack_price" 
+                                                    SortExpression="pack_price" />
+                                                <asp:CheckBoxField DataField="pack_shirt" HeaderText="pack_shirt" 
+                                                    SortExpression="pack_shirt" />
+                                                <asp:BoundField DataField="shirt_size" HeaderText="shirt_size" 
+                                                    SortExpression="shirt_size" />
+                                                <asp:BoundField DataField="pack_food" HeaderText="pack_food" 
+                                                    SortExpression="pack_food" />
+                                                <asp:BoundField DataField="pack_discount" HeaderText="pack_discount" 
+                                                    SortExpression="pack_discount" />
+                                                <asp:CheckBoxField DataField="pack_medal" HeaderText="pack_medal" 
+                                                    SortExpression="pack_medal" />
+                                                <asp:BoundField DataField="pack_category" HeaderText="pack_category" 
+                                                    SortExpression="pack_category" />
+                                                <asp:BoundField DataField="pack_reciept" HeaderText="pack_reciept" 
+                                                    SortExpression="pack_reciept" />
+                                                <asp:CheckBoxField DataField="pack_cap" HeaderText="pack_cap" 
+                                                    SortExpression="pack_cap" />
+                                                <asp:CheckBoxField DataField="pack_bag" HeaderText="pack_bag" 
+                                                    SortExpression="pack_bag" />
+                                                <asp:BoundField DataField="part_ID" HeaderText="part_ID" 
+                                                    SortExpression="part_ID" />
+                                            </Fields>
+                                        </asp:DetailsView>
+                                        <asp:SqlDataSource ID="SqlDataSourceA" runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
+                                            SelectCommand="SELECT * FROM [PACKAGE] WHERE (([pack_ID] = @pack_ID) AND ([part_ID] = @part_ID))">
+                                            <SelectParameters>
+                                                <asp:ControlParameter ControlID="txtSearch" Name="pack_ID" 
+                                                    PropertyName="Text" />
+                                                <asp:ControlParameter ControlID="txtSearch" Name="part_ID" 
+                                                    PropertyName="Text" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>
+                                        <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" 
+                                            DataKeyNames="part_ID" DataSourceID="SqlDataSourceB" Height="50px" 
+                                            Width="125px">
+                                            <Fields>
+                                                <asp:BoundField DataField="part_ID" HeaderText="part_ID" InsertVisible="False" 
+                                                    ReadOnly="True" SortExpression="part_ID" />
+                                                <asp:BoundField DataField="part_icno" HeaderText="part_icno" 
+                                                    SortExpression="part_icno" />
+                                                <asp:BoundField DataField="part_name" HeaderText="part_name" 
+                                                    SortExpression="part_name" />
+                                                <asp:BoundField DataField="part_email" HeaderText="part_email" 
+                                                    SortExpression="part_email" />
+                                                <asp:BoundField DataField="part_phoneno" HeaderText="part_phoneno" 
+                                                    SortExpression="part_phoneno" />
+                                                <asp:CheckBoxField DataField="part_paid" HeaderText="part_paid" 
+                                                    SortExpression="part_paid" />
+                                                <asp:BoundField DataField="pack_ID" HeaderText="pack_ID" 
+                                                    SortExpression="pack_ID" />
+                                            </Fields>
+                                        </asp:DetailsView>
+                                        <asp:SqlDataSource ID="SqlDataSourceB" runat="server" 
+                                            ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
+                                            SelectCommand="SELECT part_ID, part_icno, part_name, part_email, part_phoneno, part_paid, pack_ID FROM PARTICIPANT WHERE (part_name = @part_name) OR (part_icno = @part_icno) OR (part_phoneno = @part_phoneno) OR (part_ID = @part_ID) OR (pack_ID = @pack_ID)">
+                                            <SelectParameters>
+                                                <asp:ControlParameter ControlID="txtSearch" Name="part_name" 
+                                                    PropertyName="Text" />
+                                                <asp:ControlParameter ControlID="txtSearch" Name="part_icno" 
+                                                    PropertyName="Text" />
+                                                <asp:ControlParameter ControlID="txtSearch" Name="part_phoneno" 
+                                                    PropertyName="Text" />
+                                                <asp:ControlParameter ControlID="txtSearch" Name="part_ID" 
+                                                    PropertyName="Text" />
+                                                <asp:ControlParameter ControlID="txtSearch" Name="pack_ID" 
+                                                    PropertyName="Text" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>
                                     </div>
                                  </td>
+                            </tr>
+                            <tr>
+                                <td class="sideNav">
+                                    &nbsp;</td>
+                                <td class="style1">
+                                    &nbsp;</td>
                             </tr>
                         </table>
                     </td>
