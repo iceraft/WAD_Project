@@ -36,9 +36,6 @@
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Eval("part_paid") %>' Enabled="false" />
                     </td>
-                    <td>
-                        <asp:Label ID="pack_IDLabel" runat="server" Text='<%# Eval("pack_ID") %>' />
-                    </td>
                 </tr>
             </AlternatingItemTemplate>
             <EditItemTemplate>
@@ -71,9 +68,6 @@
                     <td>
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Bind("part_paid") %>' />
-                    </td>
-                    <td>
-                        <asp:TextBox ID="pack_IDTextBox" runat="server" Text='<%# Bind("pack_ID") %>' />
                     </td>
                 </tr>
             </EditItemTemplate>
@@ -116,9 +110,6 @@
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Bind("part_paid") %>' />
                     </td>
-                    <td>
-                        <asp:TextBox ID="pack_IDTextBox" runat="server" Text='<%# Bind("pack_ID") %>' />
-                    </td>
                 </tr>
             </InsertItemTemplate>
             <ItemTemplate>
@@ -149,9 +140,6 @@
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Eval("part_paid") %>' Enabled="false" />
                     </td>
-                    <td>
-                        <asp:Label ID="pack_IDLabel" runat="server" Text='<%# Eval("pack_ID") %>' />
-                    </td>
                 </tr>
             </ItemTemplate>
             <LayoutTemplate>
@@ -175,8 +163,6 @@
                                         part_phoneno</th>
                                     <th runat="server">
                                         part_paid</th>
-                                    <th runat="server">
-                                        pack_ID</th>
                                 </tr>
                                 <tr ID="itemPlaceholder" runat="server">
                                 </tr>
@@ -223,9 +209,6 @@
                     <td>
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Eval("part_paid") %>' Enabled="false" />
-                    </td>
-                    <td>
-                        <asp:Label ID="pack_IDLabel" runat="server" Text='<%# Eval("pack_ID") %>' />
                     </td>
                 </tr>
             </SelectedItemTemplate>
