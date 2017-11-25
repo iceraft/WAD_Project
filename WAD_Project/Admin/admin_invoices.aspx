@@ -217,28 +217,7 @@
             </asp:ListView>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
-                DeleteCommand="DELETE FROM [PARTICIPANT] WHERE [part_ID] = @part_ID" 
-                InsertCommand="INSERT INTO [PARTICIPANT] ([part_icno], [part_name], [part_email], [part_phoneno], [part_paid]) VALUES (@part_icno, @part_name, @part_email, @part_phoneno, @part_paid)" 
-                SelectCommand="SELECT * FROM [PARTICIPANT] WHERE ([part_paid] IS NULL)" 
-                UpdateCommand="UPDATE [PARTICIPANT] SET [part_icno] = @part_icno, [part_name] = @part_name, [part_email] = @part_email, [part_phoneno] = @part_phoneno, [part_paid] = @part_paid WHERE [part_ID] = @part_ID">
-                <DeleteParameters>
-                    <asp:Parameter Name="part_ID" Type="Int32" />
-                </DeleteParameters>
-                <InsertParameters>
-                    <asp:Parameter Name="part_icno" Type="String" />
-                    <asp:Parameter Name="part_name" Type="String" />
-                    <asp:Parameter Name="part_email" Type="String" />
-                    <asp:Parameter Name="part_phoneno" Type="String" />
-                    <asp:Parameter Name="part_paid" Type="Boolean" />
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="part_icno" Type="String" />
-                    <asp:Parameter Name="part_name" Type="String" />
-                    <asp:Parameter Name="part_email" Type="String" />
-                    <asp:Parameter Name="part_phoneno" Type="String" />
-                    <asp:Parameter Name="part_paid" Type="Boolean" />
-                    <asp:Parameter Name="part_ID" Type="Int32" />
-                </UpdateParameters>
+                SelectCommand="SELECT * FROM [PACKAGE]">
             </asp:SqlDataSource>
 
 
