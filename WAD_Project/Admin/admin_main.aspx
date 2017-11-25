@@ -77,8 +77,7 @@
                 <asp:Parameter Name="name" Type="String" />
             </InsertParameters>
             <SelectParameters>
-                <asp:SessionParameter DefaultValue="&quot; &quot;" Name="username" 
-                    SessionField="name" Type="String" />
+                <asp:SessionParameter Name="username" SessionField="username" Type="String" />
             </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="password" Type="String" />

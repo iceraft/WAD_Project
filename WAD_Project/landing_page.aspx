@@ -289,7 +289,8 @@
                     bgcolor="#CCCCCC" align="center">CHECK YOUR REGISTRATION</td></tr><tr>
                     <td bgcolor="#CCCCCC" align="center" valign="middle">
                     <asp:ImageButton ID="ImageButton1" runat="server" Height="348px" 
-                        ImageUrl="~/Photo 24-11-2017, 6 22 10 PM_preview.jpeg" Width="315px" />
+                        ImageUrl="~/Photo 24-11-2017, 6 22 10 PM_preview.jpeg" Width="315px" 
+                            onclick="ImageButton1_Click" />
                     </td>
                 <td class="style43" bgcolor="#CCCCCC" align="center">&nbsp;&nbsp;
                     <asp:TextBox ID="TextBox3" runat="server" Width="154px"></asp:TextBox>
@@ -318,12 +319,13 @@
                 <td class="style39">Instagram</td><td class="style40">Email</td>
                 <td class="style41" rowspan="3" style="border-style: solid">Admin Login<table><tr>
                     <td class="style28">Username:</td><td class="style34">
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
                     </td></tr><tr><td class="style28">Password:</td><td class="style34">
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
                         </td></tr><tr><td class="style28">&nbsp;</td><td class="style34">
-                        <asp:Button ID="Button1" runat="server" Text="Button" />
-                        </td></tr></table>&nbsp;</td></tr><tr><td class="style32">
+                        <asp:Button ID="Button1" runat="server" Text="Login" onclick="btnLogin_Click" />
+                        </td></tr></table>&nbsp;<asp:Label ID="lblResponse" runat="server"></asp:Label>
+                </td></tr><tr><td class="style32">
                 <asp:Image ID="Image4" runat="server" Height="40px" 
                     ImageUrl="~/twitter-1.png" />
                 </td><td class="style28">
