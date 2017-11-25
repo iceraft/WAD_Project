@@ -11,10 +11,6 @@ Clone this project and open in Visual Studio
 Visual Studio
 Microsoft Server SQL
 
-## Built With
-
-* [Web-Boilerplate](https://github.com/ashrafkamarudin/Web-Boilerplate) - Web-Boilerplate based on Bootstrap 4
-
 ## Authors
 
 * **Ashraf Rahman - Lead Developer** 
