@@ -24,20 +24,22 @@ No license ... yet.
 
 ## TODO
 
-### Field Validators
+### Field Validators [ ]
 
-### Participant Form
+### Participant Register
 
 - [x] Field Validators.
 - [x] Form Styling
 - [ ] Redirect to package
 - [ ] If package is paid, notify.
+- [ ] database.
+- [ ] 
 
-### Participant Package
-
-- [ ] Price and Discount Calculations
-- [ ] Price for every items
-- [ ] if package is paid disable package web controls.
-- [ ] redirect back to page to part_view.
+### Participant View 
+- [ ] Field Validators.
+- [ ] Form Styling
+- [ ] Redirect to package
+- [ ] If package is paid, notify.
 
 ### Database Foreign Key
+- [x]
