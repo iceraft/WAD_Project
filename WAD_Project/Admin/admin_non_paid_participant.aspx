@@ -39,6 +39,9 @@
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Eval("part_paid") %>' Enabled="false" />
                     </td>
+                    <td>
+                        <asp:Label ID="pack_IDLabel" runat="server" Text='<%# Eval("pack_ID") %>' />
+                    </td>
                 </tr>
             </AlternatingItemTemplate>
             <EditItemTemplate>
@@ -71,6 +74,9 @@
                     <td>
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Bind("part_paid") %>' />
+                    </td>
+                    <td>
+                        <asp:TextBox ID="pack_IDTextBox" runat="server" Text='<%# Bind("pack_ID") %>' />
                     </td>
                 </tr>
             </EditItemTemplate>
@@ -113,6 +119,9 @@
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Bind("part_paid") %>' />
                     </td>
+                    <td>
+                        <asp:TextBox ID="pack_IDTextBox" runat="server" Text='<%# Bind("pack_ID") %>' />
+                    </td>
                 </tr>
             </InsertItemTemplate>
             <ItemTemplate>
@@ -143,6 +152,9 @@
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Eval("part_paid") %>' Enabled="false" />
                     </td>
+                    <td>
+                        <asp:Label ID="pack_IDLabel" runat="server" Text='<%# Eval("pack_ID") %>' />
+                    </td>
                 </tr>
             </ItemTemplate>
             <LayoutTemplate>
@@ -166,6 +178,8 @@
                                         part_phoneno</th>
                                     <th runat="server">
                                         part_paid</th>
+                                    <th runat="server">
+                                        pack_ID</th>
                                 </tr>
                                 <tr ID="itemPlaceholder" runat="server">
                                 </tr>
@@ -213,15 +227,20 @@
                         <asp:CheckBox ID="part_paidCheckBox" runat="server" 
                             Checked='<%# Eval("part_paid") %>' Enabled="false" />
                     </td>
+                    <td>
+                        <asp:Label ID="pack_IDLabel" runat="server" Text='<%# Eval("pack_ID") %>' />
+                    </td>
                 </tr>
             </SelectedItemTemplate>
         </asp:ListView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
+            
+            
+            SelectCommand="SELECT * FROM [PARTICIPANT] WHERE ([part_paid] = @part_paid)" 
             DeleteCommand="DELETE FROM [PARTICIPANT] WHERE [part_ID] = @part_ID" 
-            InsertCommand="INSERT INTO [PARTICIPANT] ([part_icno], [part_name], [part_email], [part_phoneno], [part_paid]) VALUES (@part_icno, @part_name, @part_email, @part_phoneno, @part_paid)" 
-            SelectCommand="SELECT * FROM [PARTICIPANT] WHERE ([part_paid] IS NULL)" 
-            UpdateCommand="UPDATE [PARTICIPANT] SET [part_icno] = @part_icno, [part_name] = @part_name, [part_email] = @part_email, [part_phoneno] = @part_phoneno, [part_paid] = @part_paid WHERE [part_ID] = @part_ID">
+            InsertCommand="INSERT INTO [PARTICIPANT] ([part_icno], [part_name], [part_email], [part_phoneno], [part_paid], [pack_ID]) VALUES (@part_icno, @part_name, @part_email, @part_phoneno, @part_paid, @pack_ID)" 
+            UpdateCommand="UPDATE [PARTICIPANT] SET [part_icno] = @part_icno, [part_name] = @part_name, [part_email] = @part_email, [part_phoneno] = @part_phoneno, [part_paid] = @part_paid, [pack_ID] = @pack_ID WHERE [part_ID] = @part_ID">
             <DeleteParameters>
                 <asp:Parameter Name="part_ID" Type="Int32" />
             </DeleteParameters>
@@ -231,13 +250,18 @@
                 <asp:Parameter Name="part_email" Type="String" />
                 <asp:Parameter Name="part_phoneno" Type="String" />
                 <asp:Parameter Name="part_paid" Type="Boolean" />
+                <asp:Parameter Name="pack_ID" Type="Int32" />
             </InsertParameters>
+            <SelectParameters>
+                <asp:Parameter DefaultValue="False" Name="part_paid" Type="Boolean" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="part_icno" Type="String" />
                 <asp:Parameter Name="part_name" Type="String" />
                 <asp:Parameter Name="part_email" Type="String" />
                 <asp:Parameter Name="part_phoneno" Type="String" />
                 <asp:Parameter Name="part_paid" Type="Boolean" />
+                <asp:Parameter Name="pack_ID" Type="Int32" />
                 <asp:Parameter Name="part_ID" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
