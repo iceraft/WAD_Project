@@ -1,5 +1,0 @@
-INSERT [dbo].[ADMIN] ([username], [password], [name]) VALUES (N'admin', N'1234', N'Zuriani')
-INSERT [dbo].[ADMIN] ([username], [password], [name]) VALUES (N'admin1', N'1234', N'Fuyu')
-INSERT [dbo].[ADMIN] ([username], [password], [name]) VALUES (N'admin2', N'1234', N'Acap')
-INSERT [dbo].[ADMIN] ([username], [password], [name]) VALUES (N'admin3', N'1234', N'Erin')
-INSERT [dbo].[ADMIN] ([username], [password], [name]) VALUES (N'admin4', N'1234', N'Anis')
