@@ -138,13 +138,12 @@
                                                     SortExpression="part_phoneno" />
                                                 <asp:CheckBoxField DataField="part_paid" HeaderText="part_paid" 
                                                     SortExpression="part_paid" />
-                                                <asp:BoundField DataField="pack_ID" HeaderText="pack_ID" 
-                                                    SortExpression="pack_ID" />
                                             </Fields>
                                         </asp:DetailsView>
                                         <asp:SqlDataSource ID="SqlDataSourceB" runat="server" 
                                             ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
-                                            SelectCommand="SELECT part_ID, part_icno, part_name, part_email, part_phoneno, part_paid, pack_ID FROM PARTICIPANT WHERE (part_name = @part_name) OR (part_icno = @part_icno) OR (part_phoneno = @part_phoneno) OR (part_ID = @part_ID) OR (pack_ID = @pack_ID)">
+                                            
+                                            SelectCommand="SELECT part_ID, part_icno, part_name, part_email, part_phoneno, part_paid FROM PARTICIPANT WHERE (part_name = @part_name) OR (part_icno = @part_icno) OR (part_phoneno = @part_phoneno) OR (part_ID = @part_ID) ">
                                             <SelectParameters>
                                                 <asp:ControlParameter ControlID="txtSearch" Name="part_name" 
                                                     PropertyName="Text" />
@@ -153,8 +152,6 @@
                                                 <asp:ControlParameter ControlID="txtSearch" Name="part_phoneno" 
                                                     PropertyName="Text" />
                                                 <asp:ControlParameter ControlID="txtSearch" Name="part_ID" 
-                                                    PropertyName="Text" />
-                                                <asp:ControlParameter ControlID="txtSearch" Name="pack_ID" 
                                                     PropertyName="Text" />
                                             </SelectParameters>
                                         </asp:SqlDataSource>

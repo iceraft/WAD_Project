@@ -15,6 +15,7 @@
                     <td>
                         <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
                             Text="Delete" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                     </td>
                     <td>
                         <asp:Label ID="part_IDLabel" runat="server" Text='<%# Eval("part_ID") %>' />
@@ -118,6 +119,7 @@
                     <td>
                         <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
                             Text="Delete" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                     </td>
                     <td>
                         <asp:Label ID="part_IDLabel" runat="server" Text='<%# Eval("part_ID") %>' />
@@ -187,6 +189,7 @@
                     <td>
                         <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" 
                             Text="Delete" />
+                        <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
                     </td>
                     <td>
                         <asp:Label ID="part_IDLabel" runat="server" Text='<%# Eval("part_ID") %>' />
