@@ -13,11 +13,12 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <p>
+<div class="main">
+    <h1>
         <br />
-        Participant&#39;s Registration</p>
-    <p>
-        Personal Info</p>
+        Participant&#39;s Registration</h1>
+    <h2>
+        Personal Info</h2>
     <table class="style1">
         <tr>
             <td>
@@ -79,7 +80,7 @@
         </tr>
     </table>
     <br />
-    Package Info<br />
+    <h2>Package Info</h2><br />
     <table class="style1">
         <tr>
             <td>
@@ -127,7 +128,7 @@
         </tr>
     </table>
     <br />
-    Add-Ons<br />
+    <h2>Add-Ons</h2><br />
     <table class="style1">
         <tr>
             <td>
@@ -187,5 +188,5 @@
     <br />
     <br />
     <asp:Label ID="Label1" runat="server"></asp:Label>
+</div>
 </asp:Content>
-
