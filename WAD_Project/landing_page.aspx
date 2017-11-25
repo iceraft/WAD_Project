@@ -321,7 +321,7 @@
                     <td class="style28">Username:</td><td class="style34">
                     <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
                     </td></tr><tr><td class="style28">Password:</td><td class="style34">
-                        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                         </td></tr><tr><td class="style28">&nbsp;</td><td class="style34">
                         <asp:Button ID="Button1" runat="server" Text="Login" onclick="btnLogin_Click" />
                         </td></tr></table>&nbsp;<asp:Label ID="lblResponse" runat="server"></asp:Label>
