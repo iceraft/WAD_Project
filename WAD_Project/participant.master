@@ -8,13 +8,42 @@
     <link href="css/participant_register.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            height: 41px;
+        }
+        .style3
+        {
+            height: 22px;
+        }
+        </style>
 </head>
-<body>
+<body alink="#ff3300">
     <form id="form1" runat="server">
     <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+            <table class="style1">
+                <tr>
+                    <td align="center">
+                        <asp:Image ID="Image1" runat="server" ImageAlign="Middle" class="img-center"
+                         ImageUrl="~/Photo 24-11-2017, 5 51 01 PM_preview.jpeg" Width="1005px" 
+                            CssClass="img-center" /></td>
+                </tr>
+                <tr>
+                    <td class="style2" align="center">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="style3" align="center">
+                        </td>
+                </tr>
+            </table>
     </div>
     </form>
 </body>
