@@ -23,17 +23,21 @@ public partial class landing_page : System.Web.UI.Page
         cmd = new SqlCommand("SELECT name FROM ADMIN WHERE username='" + txtUsername.Text + "' AND password='" + txtPassword.Text + "'", conn);
         SqlDataReader sdr = cmd.ExecuteReader();
 
-        if(sdr.Read())  
+        if (sdr.Read())
         {
             Session["name"] = sdr["name"];
             Response.Redirect("Admin/admin_main.aspx");
-            lblResponse.Text = " "; 
+            lblResponse.Text = " ";
 
-        }  
-        else  
-        {  
-            lblResponse.Text="Invalid Login please check username and password";  
-        }  
-        conn.Close();  
+        }
+        else
+        {
+            lblResponse.Text = "Invalid Login please check username and password";
+        }
+        conn.Close();
+    }
+    protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("participant_register.aspx");
     }
 }
