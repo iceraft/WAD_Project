@@ -70,14 +70,13 @@
                                     <br />
                                     <div class="content">
                                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" ></asp:ContentPlaceHolder>
+                                        <br />&nbsp;Not finding what your looking for??
                                         <br />
-&nbsp;Not finding what your looking for??<br />
-&nbsp;
-                                        <asp:TextBox ID="txtSearch" runat="server" 
-                                            ontextchanged="txtSearch_TextChanged" Width="550px">0</asp:TextBox>
-&nbsp;<asp:Button ID="btnSearch" runat="server" Text="Search" />
-                                        <br />
-&nbsp; <sup><i>Can only search by id,phoneno, IC please dont place name</i></sup><br />
+                                        &nbsp;
+                                        <asp:TextBox ID="txtSearch" runat="server" Width="550px">0</asp:TextBox>
+                                            &nbsp;<asp:Button ID="btnSearch" runat="server" Text="Search"/>
+                                                                                    <br />
+                                            &nbsp; <sup><i>Can only search by id,phoneno, IC please dont place name</i></sup><br />
                                         <asp:RangeValidator ID="rvSearch" runat="server" ControlToValidate="txtSearch" 
                                             ErrorMessage="&lt;b&gt;Thats not a the wanted input my love.&lt;/b&gt;" 
                                             MaximumValue="9999999999999999999999" MinimumValue="0"></asp:RangeValidator>
