@@ -25,10 +25,10 @@ No license ... yet.
 ---------------------------------------
 ## Update Alpha 1.0
 
-cancel btn on register
-database entry for register form
-admin_main bug fix
-admin_master bug fix
+- Cancel btn on register
+- Database entry for register form
+- Admin_main bug fix
+- Admin_master bug fix
 
 ---------------------------------------
 
