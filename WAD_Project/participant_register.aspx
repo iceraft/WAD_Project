@@ -6,14 +6,10 @@
         {
             width: 100%;
         }
-        .style2
-        {
-            height: 23px;
-        }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<div class="main">
+    <div class="main">
     <h1>
         <br />
         Participant&#39;s Registration</h1>
@@ -81,52 +77,45 @@
     </table>
     <br />
     <h2>Package Info</h2><br />
-    <table class="style1">
-        <tr>
-            <td>
-                Package</td>
-            <td>
-                Distance</td>
-            <td>
-                Price</td>
-        </tr>
-        <tr>
-            <td rowspan="2">
-                Children</td>
-            <td>
-                <asp:RadioButton ID="rb3km" runat="server" GroupName="rbGroupDistance" 
+    <table border="1" align="center">
+            <tr><td class="style21" bgcolor="White">Category</td><td class="style20" 
+                    bgcolor="White">Distance</td>
+                <td class="style44" bgcolor="White">Price</td></tr>
+            <tr><td class="style13" rowspan="2" bgcolor="#FFCC66"><span class="style46">Kid Superhero</span><br 
+                    class="style46" />
+                <span class="style46">Age 5 - 12 years old</span></td><td class="style16" 
+                    bgcolor="#FFCC66">
+                    <asp:RadioButton ID="rb3km" runat="server" GroupName="rbGroupDistance" 
                     Text="3" />
-&nbsp;KM</td>
-            <td>
-                3</td>
-        </tr>
-        <tr>
-            <td>
+                    <span class="style46">&nbsp;km</span><br class="style46" />
+                </td><td class="style15" bgcolor="#FFCC66"><span class="style46">RM25</span><br 
+                        class="style46" />
+                    <span class="style46">***includes wristband and certificate</span></td></tr>
+            <tr><td class="style47" bgcolor="#FFCC66">
                 <asp:RadioButton ID="rb5km" runat="server" GroupName="rbGroupDistance" 
                     Text="5" />
-&nbsp;KM</td>
-            <td>
-                5</td>
-        </tr>
-        <tr>
-            <td rowspan="2">
-                Adult</td>
-            <td class="style2">
+                &nbsp;km</td><td class="style15" 
+                    bgcolor="#FFCC66"><span class="style46">RM25</span><br class="style46" />
+                <span class="style46">***includes wristband and certificate</span></td></tr>
+            <tr><td class="style13" rowspan="2" bgcolor="#FF6600"><span class="style46">Adult Superhero</span><br 
+                    class="style46" />
+                <span class="style46">Age 13 - 45 years old</span></td><td class="style47" 
+                    bgcolor="#FF6600">
                 <asp:RadioButton ID="rb10km" runat="server" GroupName="rbGroupDistance" 
                     Text="10" />
-&nbsp;KM</td>
-            <td class="style2">
-                10</td>
-        </tr>
-        <tr>
-            <td>
+                &nbsp;km</td>
+                <td class="style15" bgcolor="#FF6600"><span class="style46">RM40</span><br 
+                        class="style46" />
+                    <span class="style46">***includes wristband and certificate</span></td></tr>
+            <tr><td class="style17" bgcolor="#FF6600">
                 <asp:RadioButton ID="rb15km" runat="server" GroupName="rbGroupDistance" 
                     Text="15" />
-&nbsp;KM</td>
-            <td>
-                15</td>
-        </tr>
-    </table>
+    &nbsp;km</td>
+                <td class="style18" 
+                    bgcolor="#FF6600"><span class="style46">RM40</span><br class="style46" />
+                    <span class="style46">***includes wristband and certificate</span></td></tr>
+            
+            </table>
     <br />
     <h2>Add-Ons</h2><br />
     <table class="style1">
@@ -141,7 +130,7 @@
                 <asp:CheckBox ID="chckMedal" runat="server" Text="Medal" />
             </td>
             <td>
-                1</td>
+                20</td>
         </tr>
         <tr>
             <td>
@@ -158,28 +147,28 @@
                 </asp:DropDownList>
             </td>
             <td>
-                1</td>
+                20</td>
         </tr>
         <tr>
             <td>
                 <asp:CheckBox ID="chckCap" runat="server" Text="Cap" />
             </td>
             <td>
-                1</td>
+                10</td>
         </tr>
         <tr>
             <td>
                 <asp:CheckBox ID="chckBag" runat="server" Text="Bag" />
             </td>
             <td>
-                1</td>
+                30</td>
         </tr>
         <tr>
             <td>
                 <asp:CheckBox ID="chckBfast" runat="server" Text="Breakfast Set" />
             </td>
             <td>
-                1</td>
+                10</td>
         </tr>
     </table>
     <br />

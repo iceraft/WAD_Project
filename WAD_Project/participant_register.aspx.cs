@@ -23,6 +23,9 @@ public partial class participant_register : System.Web.UI.Page
     }
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
+        // variables
+        int total = 0;
+
         // Personal Info
         Session["name"] = txtName.Text;
         Session["age"] = txtAge.Text;
@@ -36,18 +39,22 @@ public partial class participant_register : System.Web.UI.Page
         if (rb3km.Checked)
         {
             rb = rb3km.Text;
+            total += 25;
         }
         else if (rb5km.Checked)
         {
             rb = rb5km.Text;
+            total += 25;
         }
         else if (rb10km.Checked)
         {
             rb = rb10km.Text;
+            total += 40;
         }
         else if (rb15km.Checked)
         {
             rb = rb15km.Text;
+            total += 40;
         }
 
         Session["distance"] = rb;
@@ -59,25 +66,31 @@ public partial class participant_register : System.Web.UI.Page
         if (chckMedal.Checked)
         {
             addons = addons + "medal<br />";
+            total += 20;
         }
         if (chckTshirt.Checked)
         {
             addons = addons + "T-Shirt<br />";
+            total += 20;
         }
         if (chckCap.Checked)
         {
             addons = addons + "Cap<br />";
+            total += 10;
         }
         if (chckBag.Checked)
         {
             addons = addons + "Bag<br />";
+            total += 30;
         }
         if (chckBfast.Checked)
         {
             addons = addons + "BreakFast Set<br />";
+            total += 10;
         }
 
         Session["addons"] = addons;
+        Session["total"] = total;
 
         // Test
         String test = "";
@@ -89,5 +102,8 @@ public partial class participant_register : System.Web.UI.Page
         }
 
         Label1.Text = test;
+
+        Response.Redirect("participant_view.aspx");
     }
+    
 }

@@ -63,6 +63,11 @@
 	  color: #e81c4f;
 	  text-decoration: none;
 	}
+	
+	.img-center 
+	{
+        margin: 0 auto;
+	}
 
 	input[type=text], 
 	input[type=date],
