@@ -332,7 +332,7 @@
                 <td class="style43" bgcolor="#CCCCCC" align="center">&nbsp;&nbsp;
                     <asp:TextBox ID="TextBox3" runat="server" Width="154px"></asp:TextBox>
 &nbsp;&nbsp;
-                    <asp:Button ID="Button2" runat="server" Text="CHECK!" onclick="Button2_Click" />
+                    <asp:Button ID="Button2" runat="server" Text="CHECK!" />
                     <br />
                     ***insert your ic number***</td></tr></table>
                 

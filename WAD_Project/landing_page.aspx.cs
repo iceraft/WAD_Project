@@ -18,11 +18,13 @@ public partial class landing_page : System.Web.UI.Page
     }
     protected void btnLogin_Click(object sender, EventArgs e)
     {
+        //database connection
         SqlConnection conn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=dbtest;Integrated Security=True");
         conn.Open();
+        //query
         cmd = new SqlCommand("SELECT name FROM ADMIN WHERE username='" + txtUsername.Text + "' AND password='" + txtPassword.Text + "'", conn);
         SqlDataReader sdr = cmd.ExecuteReader();
-
+        //database retrieve
         if (sdr.Read())
         {
             Session["name"] = sdr["name"];
@@ -39,9 +41,5 @@ public partial class landing_page : System.Web.UI.Page
     protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
     {
         Response.Redirect("participant_register.aspx");
-    }
-    protected void Button2_Click(object sender, EventArgs e)
-    {
-
     }
 }
