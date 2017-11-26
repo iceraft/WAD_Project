@@ -6,6 +6,121 @@
         {
             width: 100%;
         }
+        .style31
+    {
+        width: 300px;
+        color: #000000;
+        font-size: large;
+    }
+    .style32
+    {
+        width: 202px;
+        color: #000000;
+    }
+    .style34
+    {
+        width: 281px;
+        text-align: left;
+        font-style: italic;
+    }
+    .style35
+    {
+        width: 243px;
+        text-align: right;
+        color: #000000;
+        font-family: "Arial Unicode MS";
+    }
+    .style36
+    {
+        font-family: "Bell MT";
+    }
+    .style37
+    {
+        width: 195px;
+    }
+    .style38
+    {
+        color: #000000;
+    }
+    .style39
+    {
+        color: #FEFFFF;
+        font-family: Candara;
+    }
+    .style40
+    {
+        width: 300px;
+        font-weight: bold;
+        font-size: large;
+    }
+    .style41
+    {
+        width: 202px;
+        font-weight: bold;
+        font-size: large;
+    }
+    .style42
+    {
+        font-family: Candara;
+    }
+    .style43
+    {
+        color: #000000;
+        font-family: Candara;
+        font-size: large;
+    }
+    .style45
+    {
+        font-size: large;
+    }
+    .style46
+    {
+        color: #000000;
+        font-size: large;
+    }
+    .style47
+    {
+        font-family: Candara;
+        font-size: large;
+    }
+    .style48
+    {
+        font-size: large;
+        font-weight: normal;
+    }
+    .style49
+    {
+        color: #000000;
+        font-size: large;
+        font-weight: normal;
+    }
+    .style51
+    {
+        font-weight: bold;
+    }
+    .style52
+    {
+        color: #000000;
+        font-size: large;
+    }
+    .style53
+    {
+        font-size: large;
+        font-weight: bold;
+    }
+    .style54
+    {
+        font-family: Candara;
+        font-size: large;
+        font-weight: bold;
+    }
+    .style55
+    {
+        width: 202px;
+        color: #000000;
+        font-family: Candara;
+        font-size: large;
+    }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -15,170 +130,141 @@
         Participant&#39;s Registration</h1>
     <h2>
         Personal Info</h2>
-    <table class="style1">
-        <tr>
-            <td>
-                Full Name :</td>
-            <td>
-                <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-            </td>
-            <td>
+        <table style="width: 631px">
+            <tr><td class="style35">Full Name :&nbsp;&nbsp; </td><td class="style37">
+                <asp:TextBox ID="txtName" runat="server" Width="172px"></asp:TextBox>
+                </td><td class="style34">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                    ControlToValidate="txtName" ErrorMessage="Name is Required" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Age</td>
-            <td>
-                <asp:TextBox ID="txtAge" runat="server"></asp:TextBox>
-            </td>
-            <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
-                    ControlToValidate="txtAge" ErrorMessage="Age is Required" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                I/C</td>
-            <td>
-                <asp:TextBox ID="txtIC" runat="server"></asp:TextBox>
-            </td>
-            <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                    ControlToValidate="txtIC" ErrorMessage="IC is Required" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Contact Number</td>
-            <td>
-                <asp:TextBox ID="txtNum" runat="server"></asp:TextBox>
-            </td>
-            <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
-                    ControlToValidate="txtNum" ErrorMessage="Contact Number is Required" 
-                    ForeColor="#FF3300"></asp:RequiredFieldValidator>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Email Address</td>
-            <td>
-                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-            </td>
-            <td>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                    ControlToValidate="txtEmail" ErrorMessage="Email is Required" 
-                    ForeColor="#FF3300" 
-                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-            </td>
-        </tr>
-    </table>
-    <br />
-    <h2>Package Info</h2><br />
-    <table border="1" align="center">
-            <tr><td class="style21" bgcolor="White">Category</td><td class="style20" 
-                    bgcolor="White">Distance</td>
-                <td class="style44" bgcolor="White">Price</td></tr>
-            <tr><td class="style13" rowspan="2" bgcolor="#FFCC66"><span class="style46">Kid Superhero</span><br 
-                    class="style46" />
-                <span class="style46">Age 5 - 12 years old</span></td><td class="style16" 
-                    bgcolor="#FFCC66">
-                    <asp:RadioButton ID="rb3km" runat="server" GroupName="rbGroupDistance" 
-                    Text="3" />
-                    <span class="style46">&nbsp;km</span><br class="style46" />
-                </td><td class="style15" bgcolor="#FFCC66"><span class="style46">RM25</span><br 
-                        class="style46" />
-                    <span class="style46">***includes wristband and certificate</span></td></tr>
-            <tr><td class="style47" bgcolor="#FFCC66">
-                <asp:RadioButton ID="rb5km" runat="server" GroupName="rbGroupDistance" 
-                    Text="5" />
-                &nbsp;km</td><td class="style15" 
-                    bgcolor="#FFCC66"><span class="style46">RM25</span><br class="style46" />
-                <span class="style46">***includes wristband and certificate</span></td></tr>
-            <tr><td class="style13" rowspan="2" bgcolor="#FF6600"><span class="style46">Adult Superhero</span><br 
-                    class="style46" />
-                <span class="style46">Age 13 - 45 years old</span></td><td class="style47" 
-                    bgcolor="#FF6600">
-                <asp:RadioButton ID="rb10km" runat="server" GroupName="rbGroupDistance" 
-                    Text="10" />
-                &nbsp;km</td>
-                <td class="style15" bgcolor="#FF6600"><span class="style46">RM40</span><br 
-                        class="style46" />
-                    <span class="style46">***includes wristband and certificate</span></td></tr>
-            <tr><td class="style17" bgcolor="#FF6600">
-                <asp:RadioButton ID="rb15km" runat="server" GroupName="rbGroupDistance" 
-                    Text="15" />
-    &nbsp;km</td>
-                <td class="style18" 
-                    bgcolor="#FF6600"><span class="style46">RM40</span><br class="style46" />
-                    <span class="style46">***includes wristband and certificate</span></td></tr>
+                    ControlToValidate="txtName" ErrorMessage="***Name is Required" 
+                        ForeColor="#FF3300" CssClass="style36"></asp:RequiredFieldValidator>
+                </td>
             
-            </table>
+            </tr>
+        <p>
+            
+            <tr><td class="style35">Age:&nbsp;&nbsp; </td><td class="style37">
+                <asp:TextBox ID="txtAge" runat="server" Width="172px"></asp:TextBox>
+                </td><td class="style34">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="txtAge" ErrorMessage="***Age is Required" 
+                        ForeColor="#FF3300" CssClass="style36"></asp:RequiredFieldValidator>
+                </td>
+            
+            </tr>
+            <tr><td class="style35">I/C:&nbsp;&nbsp; </td><td class="style37">
+                <asp:TextBox ID="txtIC" runat="server" Width="170px"></asp:TextBox>
+                </td><td class="style34">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="txtIC" ErrorMessage="***IC is Required" ForeColor="#FF3300" 
+                        CssClass="style36"></asp:RequiredFieldValidator>
+                </td>
+            
+            </tr>
+            <tr><td class="style35">Contact Number:&nbsp;&nbsp; </td><td class="style37">
+                <asp:TextBox ID="txtNum" runat="server" Width="170px"></asp:TextBox>
+                </td><td class="style34">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="txtNum" ErrorMessage="***Contact Number is Required" 
+                    ForeColor="#FF3300" CssClass="style36"></asp:RequiredFieldValidator>
+                </td>
+            
+            </tr>
+            <tr><td class="style35">Email Address:<br />
+                (optional)&nbsp;&nbsp; </td><td class="style37">
+                <asp:TextBox ID="txtEmail" runat="server" Width="167px"></asp:TextBox>
+                </td><td class="style34">
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="txtEmail" ErrorMessage="***Email is Required" 
+                    ForeColor="#FF3300" 
+                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" 
+                        CssClass="style36"></asp:RegularExpressionValidator>
+                </td>
+            
+            </tr>
+                    
+            </table>&nbsp;<br />
+    <h2>Package Info</h2>
+    
     <br />
-    <h2>Add-Ons (5% on Children)</h2><br />
-    <table class="style1">
-        <tr>
-            <td>
-                Item Name</td>
-            <td>
-                Price</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:CheckBox ID="chckMedal" runat="server" Text="Medal" />
-            </td>
-            <td>
-                20</td>
-        </tr>
-        <tr>
-            <td>
+    <table style="width: 458px" border="1"><tr class="style38"><td class="style54">Category</td>
+        <td class="style53"><span class="style42">Distance</td><td class="style53">Price</span></td></tr><tr>
+        <td rowspan="2" bgcolor="Yellow" class="style43"><span class="style49">Kid Superhero</span><span 
+                class="style51"><br 
+                    class="style52" />
+                </span>
+                <span class="style49">Age 5 - 12 years old</span></td>
+        <td bgcolor="Yellow" class="style38">
+                    <asp:RadioButton ID="rb3km" runat="server" GroupName="rbGroupDistance" 
+                    Text="3" CssClass="style47" />
+                    <span class="style42"><span class="style45">km</span></td>
+        <td bgcolor="Yellow"><span class="style52">RM25</span><br 
+                        class="style52" />
+                    <span class="style52">***includes wristband and certificate</span></span></td></tr>
+        <tr class="style42"><td bgcolor="Yellow" class="style52">
+                <asp:RadioButton ID="rb5km" runat="server" GroupName="rbGroupDistance" 
+                    Text="5" CssClass="style46" />
+                <span class="style38"><span class="style48">km</span></td>
+            <td bgcolor="Yellow"><span class="style52">RM25</span><br class="style52" />
+                <span class="style52">***includes wristband and certificate</span></span></td></tr><tr>
+            <td rowspan="2" bgcolor="#99CCFF" class="style43"><span class="style49">Adult Superhero</span><span 
+                    class="style51"><br 
+                    class="style52" />
+                </span>
+                <span class="style49">Age 13 - 45 years old</span></td>
+            <td bgcolor="#99CCFF" class="style38">
+                <asp:RadioButton ID="rb10km" runat="server" GroupName="rbGroupDistance" 
+                    Text="10" CssClass="style47" />
+                <span class="style42"><span class="style45">km</span></td>
+            <td bgcolor="#99CCFF"><span class="style52">RM40</span><br 
+                        class="style52" />
+                    <span class="style52">***includes wristband and certificate</span></span></td></tr>
+        <tr class="style42"><td bgcolor="#99CCFF" class="style52">
+                <asp:RadioButton ID="rb15km" runat="server" GroupName="rbGroupDistance" 
+                    Text="15" CssClass="style46" />
+                <span class="style38"><span class="style48">km</span></td>
+            <td bgcolor="#99CCFF"><span class="style45">RM40</span><br class="style45" />
+                    <span class="style45">***includes wristband and certificate</span></span></td></tr></table>
+    <br />
+    <h2>Add-Ons</h2><br />
+    <table border="1" cellpadding="0"><tr class="style42"><td class="style41">Item Name</td>
+        <td class="style40">Price</td></tr><tr class="style39"><td bgcolor="#66CCFF" 
+            class="style32">
+                <asp:CheckBox ID="chckMedal" runat="server" Text="Medal" 
+            CssClass="style45" />
+            </td><td bgcolor="#66CCFF" class="style31">RM20</td></tr><tr>
+        <td bgcolor="#66CCFF" class="style55"><span class="style38">
                 <asp:CheckBox ID="chckTshirt" runat="server" AutoPostBack="True" 
-                    oncheckedchanged="chckTshirt_CheckedChanged" Text="T-Shirt" />
-&nbsp;
-                <asp:Label ID="lblSize" runat="server" Text=" Size : " Visible="False"></asp:Label>
-                <asp:DropDownList ID="ddlSize" runat="server" Visible="False">
+                    oncheckedchanged="chckTshirt_CheckedChanged" Text="T-Shirt" 
+                CssClass="style45" />
+            <br class="style45" />
+    <asp:Label ID="lblSize" runat="server" CssClass="style45">Size : </asp:Label>
+            <span class="style45">&nbsp; </span></span>
+                <asp:DropDownList ID="ddlSize" runat="server" Visible="False" 
+                CssClass="style47">
                     <asp:ListItem>Choose Size</asp:ListItem>
                     <asp:ListItem>S</asp:ListItem>
                     <asp:ListItem>M</asp:ListItem>
                     <asp:ListItem>L</asp:ListItem>
                     <asp:ListItem>XL</asp:ListItem>
                 </asp:DropDownList>
-            </td>
-            <td>
-                20</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:CheckBox ID="chckCap" runat="server" Text="Cap" />
-            </td>
-            <td>
-                10</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:CheckBox ID="chckBag" runat="server" Text="Bag" />
-            </td>
-            <td>
-                30</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:CheckBox ID="chckBfast" runat="server" Text="Breakfast Set" />
-            </td>
-            <td>
-                10</td>
-        </tr>
-    </table>
+            <span class="style42">
+            <br class="style46" />
+        </td><td bgcolor="#66CCFF" class="style31">RM20</span></td></tr>
+        <tr class="style39"><td bgcolor="#66CCFF" class="style32">
+                <asp:CheckBox ID="chckCap" runat="server" Text="Cap" CssClass="style45" />
+            </td><td bgcolor="#66CCFF" class="style31">RM10</td></tr>
+        <tr class="style39"><td bgcolor="#66CCFF" class="style32">
+                <asp:CheckBox ID="chckBag" runat="server" Text="Bag" CssClass="style45" />
+            </td><td bgcolor="#66CCFF" class="style31">RM30</td></tr>
+        <tr class="style39"><td bgcolor="#66CCFF" class="style32">
+                <asp:CheckBox ID="chckBfast" runat="server" Text="Breakfast Set" 
+                CssClass="style45" />
+            </td><td bgcolor="#66CCFF" class="style31">RM10</td></tr></table>
     <br />
     <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" 
         Text="Submit" />
-    &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnCancel" runat="server" CausesValidation="False" 
-            onclick="btnCancel_Click" Text="Cancel" />
     <br />
     <br />
-    <asp:Label ID="lblTest" runat="server"></asp:Label>
+    <asp:Label ID="Label1" runat="server"></asp:Label>
 </div>
 </asp:Content>
