@@ -117,7 +117,7 @@
             
             </table>
     <br />
-    <h2>Add-Ons</h2><br />
+    <h2>Add-Ons (5% on Children)</h2><br />
     <table class="style1">
         <tr>
             <td>
@@ -174,8 +174,11 @@
     <br />
     <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" 
         Text="Submit" />
+    &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnCancel" runat="server" CausesValidation="False" 
+            onclick="btnCancel_Click" Text="Cancel" />
     <br />
     <br />
-    <asp:Label ID="Label1" runat="server"></asp:Label>
+    <asp:Label ID="lblTest" runat="server"></asp:Label>
 </div>
 </asp:Content>

@@ -66,7 +66,8 @@
             ConnectionString="<%$ ConnectionStrings:dbtestConnectionString %>" 
             DeleteCommand="DELETE FROM [ADMIN] WHERE [username] = @username" 
             InsertCommand="INSERT INTO [ADMIN] ([username], [password], [name]) VALUES (@username, @password, @name)" 
-            SelectCommand="SELECT * FROM [ADMIN] WHERE ([username] = @username)" 
+            SelectCommand="SELECT * FROM [ADMIN] WHERE ([name] = @name)" 
+            
             UpdateCommand="UPDATE [ADMIN] SET [password] = @password, [name] = @name WHERE [username] = @username">
             <DeleteParameters>
                 <asp:Parameter Name="username" Type="String" />
@@ -77,7 +78,7 @@
                 <asp:Parameter Name="name" Type="String" />
             </InsertParameters>
             <SelectParameters>
-                <asp:SessionParameter Name="username" SessionField="username" Type="String" />
+                <asp:SessionParameter Name="name" SessionField="name" Type="String" />
             </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="password" Type="String" />
