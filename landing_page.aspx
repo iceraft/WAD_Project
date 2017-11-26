@@ -81,6 +81,7 @@
         }
         .style28
         {
+            width: 95px;
         }
         .style29
         {
@@ -181,6 +182,42 @@
             text-align: center;
             height: 29px;
             box-shadow: 0px 0px 30px #888888;
+    }
+        .style55
+        {
+            width: 112px;
+            font-family: "Arial Unicode MS";
+            background-color: #CCCCCC;
+        }
+        .style56
+        {
+            width: 95px;
+            font-family: "Arial Unicode MS";
+            background-color: #CCCCCC;
+        }
+        .style57
+        {
+            width: 82px;
+            font-family: "Arial Unicode MS";
+            background-color: #CCCCCC;
+        }
+        .style58
+        {
+            width: 100px;
+            font-family: "Arial Unicode MS";
+            background-color: #CCCCCC;
+        }
+        .style59
+        {
+            width: 107px;
+            font-family: "Arial Unicode MS";
+            background-color: #CCCCCC;
+        }
+        .style60
+        {
+            font-family: "Arial Unicode MS";
+            background-color: #CCCCCC;
+        }
     </style>
 </head>
 <body>
@@ -264,10 +301,11 @@
                     bgcolor="White">S</td><td class="style26" bgcolor="White">M</td>
                 <td class="style27" bgcolor="White">L</td>
                 <td class="style48" bgcolor="White">XL</td><td class="style23" bgcolor="White">2XL</td></tr><tr>
-                <td bgcolor="White" class="style46">Measurement </td>
-                <td class="style49" bgcolor="White">&nbsp;</td><td class="style26" bgcolor="White">&nbsp;</td>
-                <td class="style27" bgcolor="White">&nbsp;</td>
-                <td class="style48" bgcolor="White">&nbsp;</td><td class="style23" bgcolor="White">&nbsp;</td></tr></table>
+                <td class="style60">Measurement<br />
+                    Fit to chest (cm) </td>
+                <td class="style59">91-96</td><td class="style58">96-101</td>
+                <td class="style57">101-106</td>
+                <td class="style56">106-111</td><td class="style55">111-116</td></tr></table>
                 
             <br />
             <span class="style46"><strong>Price Winner</strong></span><br />
@@ -288,12 +326,13 @@
                     bgcolor="#CCCCCC" align="center">CHECK YOUR REGISTRATION</td></tr><tr>
                     <td bgcolor="#CCCCCC" align="center" valign="middle">
                     <asp:ImageButton ID="ImageButton1" runat="server" Height="348px" 
-                        ImageUrl="~/Photo 24-11-2017, 6 22 10 PM_preview.jpeg" Width="315px" />
+                        ImageUrl="~/Photo 24-11-2017, 6 22 10 PM_preview.jpeg" Width="315px" 
+                            onclick="ImageButton1_Click" />
                     </td>
                 <td class="style43" bgcolor="#CCCCCC" align="center">&nbsp;&nbsp;
                     <asp:TextBox ID="TextBox3" runat="server" Width="154px"></asp:TextBox>
 &nbsp;&nbsp;
-                    <asp:Button ID="Button2" runat="server" Text="CHECK!" />
+                    <asp:Button ID="Button2" runat="server" Text="CHECK!" onclick="Button2_Click" />
                     <br />
                     ***insert your ic number***</td></tr></table>
                 
@@ -316,17 +355,14 @@
             <table><tr><td class="style37">Twitter</td><td class="style52">Facebook</td>
                 <td class="style39">Instagram</td><td class="style40">Email</td>
                 <td class="style41" rowspan="3" style="border-style: solid">Admin Login<table><tr>
-                    <td class="style28" colspan="2">
-                        <asp:Label ID="lblResponse" runat="server"></asp:Label>
-                    </td></tr><tr>
                     <td class="style28">Username:</td><td class="style34">
                     <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
                     </td></tr><tr><td class="style28">Password:</td><td class="style34">
-                        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                         </td></tr><tr><td class="style28">&nbsp;</td><td class="style34">
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" 
-                            onclick="btnLogin_Click1" />
-                        </td></tr></table>&nbsp;</td></tr><tr><td class="style32">
+                        <asp:Button ID="Button1" runat="server" Text="Login" onclick="btnLogin_Click" />
+                        </td></tr></table>&nbsp;<asp:Label ID="lblResponse" runat="server"></asp:Label>
+                </td></tr><tr><td class="style32">
                 <asp:Image ID="Image4" runat="server" Height="40px" 
                     ImageUrl="~/twitter-1.png" />
                 </td><td class="style28">

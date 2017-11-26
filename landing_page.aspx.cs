@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,8 +16,7 @@ public partial class landing_page : System.Web.UI.Page
     {
 
     }
-  
-    protected void btnLogin_Click1(object sender, EventArgs e)
+    protected void btnLogin_Click(object sender, EventArgs e)
     {
         SqlConnection conn = new SqlConnection("Data Source=.\\SQLEXPRESS;Initial Catalog=dbtest;Integrated Security=True");
         conn.Open();
@@ -36,5 +35,13 @@ public partial class landing_page : System.Web.UI.Page
             lblResponse.Text = "Invalid Login please check username and password";
         }
         conn.Close();
+    }
+    protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("participant_register.aspx");
+    }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+
     }
 }
