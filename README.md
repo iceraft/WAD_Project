@@ -48,7 +48,6 @@ No license ... yet.
 ==============================================================
 # Update Alpha 1.0
 ==============================================================
-
 cancel btn on register
 database entry for register form
 admin_main bug fix
