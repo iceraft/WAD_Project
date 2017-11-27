@@ -46,8 +46,9 @@ No license ... yet.
 
 
 ==============================================================
-## Update Alpha 1.0
+# Update Alpha 1.0
 ==============================================================
+
 cancel btn on register
 database entry for register form
 admin_main bug fix
@@ -55,13 +56,13 @@ admin_master bug fix
 
 ---------------------------------------
 new to do..
-# participant_register
+### participant_register
 - [ ] etter validations
 - [ ] entry for IC can be 2 fix
 - [ ] they can enter symbols in textbox that will destroy database shema fix
-#### participant_view 
+### participant_view 
 - [x] database connection 
 - [ ] payment picture upload
-#### participant.master
+### participant.master
 - [ ] css 
 
