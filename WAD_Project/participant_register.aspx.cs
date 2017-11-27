@@ -166,7 +166,7 @@ public partial class participant_register : System.Web.UI.Page
         }
 
         lblTest.Text = test;*/
-
+        System.Threading.Thread.Sleep(5000);
         Response.Redirect("landing_page.aspx");
     }
 

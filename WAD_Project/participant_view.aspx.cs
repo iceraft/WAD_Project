@@ -33,7 +33,7 @@ public partial class participant_view : System.Web.UI.Page
         Read = cmd.ExecuteReader();
         while (Read.Read())
         {
-            id = Read["part_ID"].ToString();
+            ViewState["id"] = Read["part_ID"].ToString();
             ic = Read["part_icno"].ToString();
             name = Read["part_name"].ToString();
             email = Read["part_email"].ToString();
@@ -47,7 +47,7 @@ public partial class participant_view : System.Web.UI.Page
          lblEmail.Text = email; 
          lblNumber.Text = phoneno;
 
-         cmd = new SqlCommand("SELECT * FROM [PACKAGE] WHERE ([part_ID] = '" + id + "')", conn);
+         cmd = new SqlCommand("SELECT * FROM [PACKAGE] WHERE ([part_ID] = '" + ViewState["id"] + "')", conn);
          conn.Open();
          Read = cmd.ExecuteReader();
          while (Read.Read())
@@ -65,7 +65,7 @@ public partial class participant_view : System.Web.UI.Page
          }
          conn.Close();
 
-        if (catg == "3"  || catg == "5"){
+        if (catg.CompareTo("3") ==  1 || catg.CompareTo("5") == 1 ){
         lblCatg.Text = "Kid Superhero</br>Age 5 - 12 years old";
         lblCatDist.Text = catg + "KM";
         lblCatPrice.Text = "25";
@@ -113,5 +113,39 @@ public partial class participant_view : System.Web.UI.Page
     protected void lblDone_Click(object sender, EventArgs e)
     {
         Response.Redirect("landing_page.aspx");
+    }
+
+    protected void tnUpload_Click(object sender, EventArgs e)
+    {
+        if (fuReciept.HasFile)
+        {
+            cmd = new SqlCommand("INSERT INTO [PACKAGE] (pack_reciep) VALUES (@v1)  WHERE ([part_ID] = '" + ViewState["id"] + "')", conn);
+            cmd.Parameters.AddWithValue("@v1", "TRUE");
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            cmd = new SqlCommand("INSERT INTO [PARTICIPANT] (part_paid) VALUES (@v1)  WHERE ([part_icno] = '" + Session["IC"].ToString() + "')", conn);
+            cmd.Parameters.AddWithValue("@v1", "True");
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            Response.Redirect("participant_view.aspx");
+        }
+        else
+        {
+            lblTest.Text = "Your file is not valid";
+        }
+    }
+    protected void btnPay_Click(object sender, EventArgs e)
+    {
+        fuReciept.Visible = true;
+        btnUpload.Visible = true;
+        btnCancel.Visible = true;
+    }
+    protected void btnCancel_Click(object sender, EventArgs e)
+    {
+        fuReciept.Visible = false;
+        btnUpload.Visible = false;
+        btnCancel.Visible = false;
     }
 }

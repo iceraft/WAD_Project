@@ -13,8 +13,16 @@
     <h1>
         <br />
         Participant&#39;s Registration</h1>
-    <h2>
+        <p>
+            &nbsp;</p>
+        <h2>
         Personal Info</h2>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+            <p>
+            &nbsp;</p>
     <table class="style1">
         <tr>
             <td>
@@ -171,12 +179,31 @@
                 10</td>
         </tr>
     </table>
-    <br />
-    <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" 
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        &nbsp;&nbsp;
+
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+                <asp:Button ID="btnSubmit" runat="server" onclick="btnSubmit_Click" 
         Text="Submit" />
-    &nbsp;&nbsp;&nbsp;
+            <br />
+            <br />
+            <br />
+            <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" 
+                    DynamicLayout="true" ImageAlign="AbsMiddle" 
+                    AssociatedUpdatePanelID="UpdatePanel1">
+                <ProgressTemplate>
+                    Processing<img alt="" class="style3"  src="o44oO.gif" style="width: 118px; height: 91px" />
+                    Your Form
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+        <br />
         <asp:Button ID="btnCancel" runat="server" CausesValidation="False" 
             onclick="btnCancel_Click" Text="Cancel" />
+
     <br />
     <br />
     <asp:Label ID="lblTest" runat="server"></asp:Label>

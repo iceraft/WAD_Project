@@ -15,8 +15,16 @@
     <h1>
         <br />
         Participant&#39;s Registration</h1>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
     <h2>
         Personal Info</h2>
+    <p>
+        &nbsp;</p>
+    <p>
+        &nbsp;</p>
     <table class="style1">
         <tr>
             <td>
@@ -55,6 +63,8 @@
     </table>
     <br />
     <h2>Package Info</h2>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
     <table border="1" align="center">
             <tr><td class="style21" bgcolor="White">Category</td><td class="style20" 
                     bgcolor="White">Distance(KM)</td>
@@ -65,15 +75,38 @@
     </table>
     
     <h2>Add-Ons</h2>
+    <br />
+    <br />
     <asp:Label ID="lblAddons" runat="server"></asp:Label>
     <h2>Pricing</h2>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
     Discount applied: RM<asp:Label ID="lblDiscount" runat="server"></asp:Label>
     <br />
     Total Amt to pay : RM<asp:Label ID="lblTotal" runat="server"></asp:Label>
     <br />
     <asp:Label ID="lblTest" runat="server"></asp:Label>
     <br />
-    <asp:Button ID="btnPay" runat="server" Text="Paynow?" />
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+            <asp:Button ID="btnPay" runat="server" Text="Paynow?" onclick="btnPay_Click" />
+            <br />
+            <br />
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <asp:FileUpload ID="fuReciept" runat="server" Visible="False" />
+            <br />
+            <br />
+            <asp:Button ID="btnUpload" runat="server" onclick="tnUpload_Click" 
+                Text="Upload Reciept" Visible="False" />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnCancel" runat="server" onclick="btnCancel_Click" 
+                Text="Cancel" Visible="False" />
+            <br />
+        </ContentTemplate>
+    </asp:UpdatePanel>
+    <br />
+    <br />
     <br />
     <br />
     <br />
