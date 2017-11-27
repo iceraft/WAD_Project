@@ -13,7 +13,7 @@ Microsoft Server SQL
 
 ## Authors
 
-* **Ashraf Rahman - Lead Developer** 
+* **Asyraf Rahman - Lead Developer** 
 * **Ashraf Kamarudin**
 * **Erin**
 * **Anis**
@@ -46,7 +46,7 @@ No license ... yet.
 
 
 ==============================================================
-Update Alpha 1.0
+## Update Alpha 1.0
 ==============================================================
 cancel btn on register
 database entry for register form
@@ -55,12 +55,12 @@ admin_master bug fix
 
 ---------------------------------------
 new to do..
-participant_register
+# participant_register
 - better validations
-  -entry for IC can be 2 fix [ ]
-  -they can enter symbols in textbox that will destroy database shema fix [ ]
-participant_view 
+- entry for IC can be 2 fix [ ]
+- they can enter symbols in textbox that will destroy database shema fix [ ]
+# participant_view 
 - database connection [ ]
 participant.master
--css [ ]
+- css [ ]
 
