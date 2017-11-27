@@ -56,11 +56,12 @@ admin_master bug fix
 ---------------------------------------
 new to do..
 # participant_register
-- better validations
-- entry for IC can be 2 fix [ ]
-- they can enter symbols in textbox that will destroy database shema fix [ ]
-# participant_view 
-- database connection [ ]
-participant.master
-- css [ ]
+- [ ] etter validations
+- [ ] entry for IC can be 2 fix
+- [ ] they can enter symbols in textbox that will destroy database shema fix
+#### participant_view 
+- [x] database connection 
+- [ ] payment picture upload
+#### participant.master
+- [ ] css 
 
